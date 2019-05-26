@@ -1,0 +1,1 @@
+F:\XAMARIN\DrawingBasics\DrawingBasics\DrawingBasics.UWP\DrawingBasics.UWP.csproj;x86

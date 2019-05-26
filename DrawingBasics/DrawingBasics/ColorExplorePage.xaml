@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             mc:Ignorable="d"
+             x:Class="DrawingBasics.ColorExplorePage"
+             Title="Color Explore Page">
+    <ContentPage.Content>
+        <StackLayout>
+            <Slider x:Name="hueSlider"
+                    Maximum="360"
+                    Margin="20,0"
+                    ValueChanged="OnSliderValueChanged"></Slider>
+
+            <Label HorizontalTextAlignment="Center"
+                   Text="{Binding Source={x:Reference hueSlider}, Path=Value, StringFormat='Hue = {0:F0}'}"/>
+
+            <Slider x:Name="saturationSlider" Maximum="100" Margin="20,0" ValueChanged="OnSliderValueChanged"/>
+
+            <Label HorizontalTextAlignment="Center" 
+                   Text="{Binding Source={x:Reference saturationSlider}, Path=Value, StringFormat='Saturation = {0:F0}'}"/>
+
+
+            <Slider x:Name="lightnessSlider"
+                    Maximum="100"
+                    Margin="20,0"
+                    ValueChanged="OnSliderValueChanged"/>
+
+            <Label HorizontalTextAlignment="Center"
+                   Text="{Binding Source={x:Reference lightnessSlider}, Path=Value, StringFormat='Lightness = {0:F0}'}"/>
+
+            <Grid VerticalOptions="FillAndExpand">
+                <skia:SKCanvasView x:Name="hslCanvasView"
+                                   PaintSurface="OnHslCanvasViewPaintSurface"/>
+
+                <Label x:Name="hslLabel"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       BackgroundColor="Black"
+                       TextColor="White"/>
+            </Grid>
+
+            <Slider x:Name="valueSlider"
+                    Maximum="100"
+                    Margin="20,0"
+                    ValueChanged="OnSliderValueChanged"/>
+
+            <Label HorizontalTextAlignment="Center"
+                   Text="{Binding Source={x:Reference valueSlider},
+                Path=Value,
+                StringFormat='Value = {0:F0}'}"/>
+
+
+
+            <Grid VerticalOptions="FillAndExpand">
+                <skia:SKCanvasView x:Name="hsvCanvasView"
+                                   PaintSurface="OnHsvCanvasViewPaintSurface"/>
+
+                <Label x:Name="hsvLabel" HorizontalOptions="Center"
+                       VerticalOptions="Center" BackgroundColor="Black"
+                       TextColor="White"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             mc:Ignorable="d"
+             x:Class="DrawingBasics.Test1">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <!--<RowDefinition Height="1*"/>-->
+                <!--<RowDefinition Height="1*"/>-->
+            </Grid.RowDefinitions>
+
+            <skia:SKCanvasView Grid.Row="0" x:Name="canvasView" PaintSurface="CanvasView_PaintSurface"/>
+        </Grid>
+        
+        
+        <!--<Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Blue">
+            <skia:SKCanvasView x:Name="canvasView" PaintSurface="CanvasView_PaintSurface"/>
+        </Grid>-->
+    </ContentPage.Content>
+</ContentPage>
